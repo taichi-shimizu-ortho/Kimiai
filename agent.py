@@ -54,6 +54,7 @@ def main():
             content = read_file(path)
             console.print(f"\n[bold]Content of {path}:[/bold]\n")
             console.print(content)
+            messages.append({"role": "user", "content": f"（システムメッセージ: ユーザーが {path} の内容を読み込みました）\n\n```{path}\n{content}\n```"})
             continue
 
         if user_input.startswith("/test "):
